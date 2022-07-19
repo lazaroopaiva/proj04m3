@@ -6,10 +6,15 @@
     "version": "1.0.0",
     "description": ""
   },
-  "host": "localhost:3001",
-  "basePath": "/",
-  "schemes": [
-    "http"
+  "servers": [
+    {
+      "url": "",
+      "description": "API Produção"
+    },
+    {
+      "url": "http://localhost:3001/",
+      "description": "API de Teste Local"
+    }
   ],
   "paths": {
     "/characters/characters": {

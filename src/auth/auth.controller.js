@@ -9,13 +9,13 @@ const logInController = async (req, res) => {
 
 
   if (!user) {
-    return res.status(400).send({message: 'User do not exists'})
+    return res.status(400).send({message: 'Usuário não existe'})
   }
 
   const passwordIsValid = await bcrypt.compare(password, user.password);
 
   if (!passwordIsValid) {
-    return res.status(400).send({message: 'Invalid Password'})
+    return res.status(400).send({message: 'Senha inválida'})
   }
 
   const token = authService.generateToken(user.id)
