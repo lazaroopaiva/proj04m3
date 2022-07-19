@@ -7,7 +7,7 @@ const tokenAuth = async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    return res.status(401).json({ error: 'you are not authorized' });
+    return res.status(401).json({ error: 'Você não está autorizado!' });
   }
 
   const [, token] = authHeader.split(' ');
@@ -19,7 +19,7 @@ const tokenAuth = async (req, res, next) => {
 
     return next();
   } catch (err) {
-    return res.status(401).json({ error: 'invalid token' });
+    return res.status(401).json({ error: 'Token inválido' });
   }
 }
 

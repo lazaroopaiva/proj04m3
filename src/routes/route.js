@@ -34,5 +34,10 @@ route.delete(
   idValid,
   controllerCharacter.deleteCharacterController,
 );
+route.get(
+  '/search',
+  authMiddleware.tokenAuth,
+  controllerCharacter.searchCharactersController,
+);
 
 module.exports = route;

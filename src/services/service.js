@@ -28,6 +28,13 @@ const findOne = async (newCharacter) => {
   }).exec();
   return dbCharacter;
 };
+const searchCharactersService = async (name) => {
+  const searchResult = await Character.find({
+    name: { $regex: `${name || ''}`, $options: 'i' },
+  });
+
+  return searchResult;
+};
 
 module.exports = {
   findCharacterService,
@@ -36,4 +43,5 @@ module.exports = {
   updateCharacterService,
   deleteCharacterService,
   findOne,
+  searchCharactersService
 };

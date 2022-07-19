@@ -2,10 +2,10 @@ require("dotenv").config();
 const authService = require('./auth.service');
 const bcrypt = require('bcryptjs')
 
-const sessionController = async (req, res) => {
+const logInController = async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await authService.sessionService(email)
+  const user = await authService.logInService(email)
 
 
   if (!user) {
@@ -23,6 +23,6 @@ const sessionController = async (req, res) => {
 
 }
 
-module.exports =  {sessionController}
+module.exports =  {logInController}
  
 
