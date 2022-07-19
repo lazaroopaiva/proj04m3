@@ -8,7 +8,7 @@
   },
   "servers": [
     {
-      "url": "",
+      "url": "https://proj04apirickandmorty.onrender.com",
       "description": "API Produção"
     },
     {
